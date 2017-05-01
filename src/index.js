@@ -26,6 +26,7 @@ export default {
       method,
       `Route configuration method must be a string, ` + `check ${fileshort}.`
     );
+
     assertDefAndNotNull(
       path,
       `Route configuration path must be specified, ` + `check ${fileshort}.`
