@@ -7,6 +7,10 @@
   },
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "build": "babel --presets es2015 -d lib/ src/",
     "format": "prettier --single-quote --no-bracket-spacing --trailing-comma es5 --write \"{src/**/*.js}\" && eslint --fix \"{src/**/*.js}\"",
