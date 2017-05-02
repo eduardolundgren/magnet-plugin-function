@@ -4,13 +4,16 @@ import {isFunction, isObject} from 'metal';
 const isMultiple = module => {
   return isObject(module.route) && module.route.multiple;
 };
+const isPureFunction = value => {
+  return isFunction(value) && (value.__proto__ === Function.__proto__);
+};
 
 export default {
   test(module, filename, magnet) {
     return (
       !isMultiple(module) &&
       isObject(module.route) &&
-      isFunction(module.default)
+      isPureFunction(module.default)
     );
   },
 
