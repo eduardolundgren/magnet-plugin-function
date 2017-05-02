@@ -27,20 +27,18 @@
     "url": "https://github.com/wedeploy/magnet-plugin-function.git"
   },
   "dependencies": {
-    "magnet": "latest",
     "metal": "^2.6.4",
     "metal-assertions": "^2.8.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
-    "eslint": "^3.17.1",
-    "prettier": "^1.2.2",
-    "eslint-config-liferay": "^1.0.1",
     "babel-register": "^6.23.0",
-    "mocha": "^3.2.0",
     "chai": "^3.5.0",
-    "sinon": "^1.17.7",
-    "sinon-chai": "^2.8.0"
+    "eslint": "^3.17.1",
+    "eslint-config-liferay": "^1.0.1",
+    "magnet": "latest",
+    "mocha": "^3.2.0",
+    "prettier": "^1.2.2"
   }
 }
