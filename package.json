@@ -27,6 +27,7 @@
     "url": "https://github.com/wedeploy/magnet-plugin-function.git"
   },
   "dependencies": {
+    "magnet": "latest",
     "metal": "^2.6.4",
     "metal-assertions": "^2.8.0"
   },
