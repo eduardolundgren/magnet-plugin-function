@@ -98,6 +98,7 @@ describe('pluginFunction', () => {
 
     beforeEach(async () => {
       magnet = new Magnet({directory});
+      magnet.addPlugin(pluginFunction);
       await magnet.build();
       await magnet.start();
     });
