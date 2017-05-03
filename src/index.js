@@ -4,8 +4,16 @@ import {isFunction, isObject} from 'metal';
 const isMultiple = module => {
   return isObject(module.route) && module.route.multiple;
 };
+
 const isPureFunction = value => {
-  return isFunction(value) && (value.__proto__ === Function.__proto__);
+  if (isFunction(value)) {
+    // Infer as simple function when the function's "__proto__" is not modified.
+    const maybeSimpleFunction = (value.__proto__ === Function.__proto__);
+    // Infer as async function if function definition starts with "async ".
+    const maybeAsyncFunction = (value.toString().indexOf('async ') === 0);
+    return maybeSimpleFunction || maybeAsyncFunction;
+  }
+  return false;
 };
 
 export default {
