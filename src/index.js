@@ -8,9 +8,9 @@ const isMultiple = module => {
 const isPureFunction = value => {
   if (isFunction(value)) {
     // Infer as simple function when the function's "__proto__" is not modified.
-    const maybeSimpleFunction = (value.__proto__ === Function.__proto__);
+    const maybeSimpleFunction = value.__proto__ === Function.__proto__;
     // Infer as async function if function definition starts with "async ".
-    const maybeAsyncFunction = (value.toString().indexOf('async ') === 0);
+    const maybeAsyncFunction = value.toString().indexOf('async ') === 0;
     return maybeSimpleFunction || maybeAsyncFunction;
   }
   return false;
