@@ -3,7 +3,7 @@
   "version": "0.0.8",
   "description": "Magnet plugin for function support",
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=8.9.0"
   },
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -12,8 +12,9 @@
     "src"
   ],
   "scripts": {
-    "build": "babel --presets es2015 -d lib/ src/",
-    "format": "prettier --single-quote --no-bracket-spacing --trailing-comma es5 --write \"{src/**/*.js}\" && eslint --fix \"{src/**/*.js}\"",
+    "build": "babel -d lib/ src/",
+    "format": "prettier-eslint --write \"{src/**/*.js,test/**/*.js,*.js}\" && npm run format-imports && npm run lint",
+    "format-imports": "import-sort -o src",
     "lint": "eslint src/**/*.js",
     "prepublish": "npm run build",
     "test": "mocha --compilers js:babel-core/register test/setup/node.js test/unit/**/*.js"
@@ -27,18 +28,21 @@
     "url": "https://github.com/wedeploy/magnet-plugin-function.git"
   },
   "dependencies": {
-    "metal": "^2.6.4",
+    "metal": "^2.16.0",
     "metal-assertions": "^2.8.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.23.0",
-    "chai": "^3.5.0",
-    "eslint": "^3.17.1",
-    "eslint-config-liferay": "^1.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.15.0",
+    "eslint-config-liferay": "^2.0.18",
     "magnet": "latest",
     "mocha": "^3.2.0",
-    "prettier": "^1.2.2"
+    "import-sort-cli": "^3.3.0",
+    "import-sort-parser-babylon": "^3.2.0",
+    "import-sort-style-eslint": "^3.0.0",
+    "prettier-eslint-cli": "^4.4.0"
   }
 }

@@ -9,7 +9,6 @@ module.exports = function(root) {
   });
 };
 
-
 /**
  * Assert async http request
  * @param {String} port
