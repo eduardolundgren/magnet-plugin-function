@@ -127,5 +127,12 @@ describe('pluginFunction', () => {
         contentType: 'text/html; charset=utf-8',
       });
     });
+
+    it('should register string module from directory that ends response with value setted on magnet config', async () => {
+      await assertAsyncHttpRequest({
+        path: '/fn-header-sent-with-magnet',
+        responseBody: 'headers sent - bar',
+      });
+    });
   });
 });

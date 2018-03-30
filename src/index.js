@@ -47,7 +47,7 @@ export default {
 
     app[method.toLowerCase()](path, async (req, res, next) => {
       try {
-        let result = await module.default.call(module.default, req, res, next);
+        let result = await module.default.call(module.default, req, res, next, magnet);
         if (!res.headersSent) {
           res.type(type).send(result);
         }

@@ -5,4 +5,5 @@ module.exports = {
     logLevel: 'silent',
     plugins: [],
   },
+  foo: 'bar',
 };
